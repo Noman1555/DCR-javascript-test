@@ -127,38 +127,63 @@ document.addEventListener("DOMContentLoaded", function () {
       .style("opacity", 0.7)
       .on("mouseover", (event, d) => {
         const [x, y] = d3.pointer(event);
+        showPopup(x, y, d.name);
       });
 
     svg.on("mouseout", () => {
       hidePopup();
     });
 
-    const table = document.createElement("table");
-    table.innerHTML = `
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Value</th>
-            </tr>
-        </thead>
-        <tbody>
-            ${data
-              .map(
-                (d) => `
+        const table = document.createElement("table");
+        table.innerHTML = `
+            <thead>
                 <tr>
-                    <td>${d.name}</td>
-                    <td>${d.value}</td>
+                    <th>Name</th>
+                    <th>Value</th>
                 </tr>
-            `
-              )
-              .join("")}
-        </tbody>
-    `;
+            </thead>
+            <tbody>
+                ${data
+                .map(
+                    (d) => `
+                    <tr>
+                        <td>${d.name}</td>
+                        <td>${d.value}</td>
+                    </tr>
+                `
+                )
+                .join("")}
+            </tbody>
+        `;
+        table.classList.add("styled-table");    
+        chartContainer.appendChild(table);
+    }
 
-    chartContainer.appendChild(table);
-  }
-
-
+    function showPopup(x, y, name) {
+        fetch("data/countries.json")
+            .then((response) => response.json())
+            .then((data) => {
+                const country = data.find((country) => country.name === name);
+                if (country) {
+                    const popup = document.createElement("div");
+                    popup.classList.add("popup");
+                    popup.innerHTML = `
+                        <p><strong>Name:</strong> ${country.name}</p>
+                        <p><strong>Population:</strong> ${country.population}</p>
+                        <p><strong>Borders:</strong> ${country.borders.join(", ")}</p>
+                        <p><strong>Timezones:</strong> ${country.timezones.join(", ")}</p>
+                    `;
+                    popup.style.position = "absolute";
+                    popup.style.top = `${y}px`;
+                    popup.style.left = `${x}px`;
+                    document.body.appendChild(popup);
+                }
+            })
+            .catch((error) => {
+                console.error("Error fetching data:", error);
+            });
+    }
+    
 
   function hidePopup() {
     const popup = document.querySelector(".popup");
