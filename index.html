@@ -2,37 +2,37 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Country Data Visualization</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Country Data Visualization</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
-    <div class="container">
-        <header>
-            <h1>Country Data Visualization</h1>
-        </header>
-        <form id="dataForm">
-            <label for="plotOptions">Select Plot Option:</label>
-            <select id="plotOptions">
-                <optgroup label="By Country">
-                    <option value="population">Population size</option>
-                    <option value="borders">Number of borders</option>
-                    <option value="timezones">Number of timezones</option>
-                    <option value="languages">Number of languages</option>
-                </optgroup>
-                <optgroup label="By Region">
-                    <option value="regionCountries">Number of countries in the region</option>
-                    <option value="regionTimezones">Number of unique timezones in the region</option>
-                </optgroup>
-            </select>
-            <button type="submit">Plot</button>
-        </form>
-        <div id="chartContainer"></div>
-    </div>
-    <script src="script.js"></script>
-    <script src="https://d3js.org/d3.v7.min.js"></script>
+<body class="body">
+  <div class="container">
+    <header>
+      <h1 class="header-title">Country Data Visualization</h1>
+    </header>
+    <form class="form" id="dataForm">
+      <label class="form-label" for="plotOptions">Select Plot Option:</label>
+      <select class="form-select" id="plotOptions">
+        <optgroup label="By Country">
+          <option value="population">Population size</option>
+          <option value="borders">Number of borders</option>
+          <option value="timezones">Number of timezones</option>
+          <option value="languages">Number of languages</option>
+        </optgroup>
+        <optgroup label="By Region">
+          <option value="regionCountries">Number of countries in the region</option>
+          <option value="regionTimezones">Number of unique timezones in the region</option>
+        </optgroup>
+      </select>
+      <button class="form-button" type="submit">Plot</button>
+    </form>
+    <div class="chart-container" id="chartContainer"></div>
+  </div>
+  <script src="script.js"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
 </body>
 
 </html>
