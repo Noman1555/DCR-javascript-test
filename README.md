@@ -1,4 +1,4 @@
-# Country Data Visualization**
+# Country Data Visualization 
 
 This project provides a web-based visualization tool for exploring various aspects of country data. Users can select different plot options from a dropdown menu and view corresponding visualizations and additional information about countries.
 
@@ -42,3 +42,8 @@ Alternatively, you can run the project on a live server:
 
 - **Data Source**: The country data used in this project is sourced from `countries.json`.
 - **D3.js**: The visualization library used for creating interactive charts.
+
+### Visualization
+
+<img width="1120" alt="image" src="https://github.com/Noman1555/DCR-javascript-test/assets/164897336/ade27a5f-58f0-4330-acee-d6a76e04d3c4">
+
