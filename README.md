@@ -1,57 +1,49 @@
-# Digital Control Room - JavaScript Test
+# Country Data Visualization 
 
-Thank you for taking the time to complete this exercise.
+This project provides a web-based visualization tool for exploring various aspects of country data. Users can select different plot options from a dropdown menu and view corresponding visualizations and additional information about countries.
 
-## Introduction
+### Getting Started
 
-This project is to build a simple web page with a form, a table and "bubble" chart to display country data as selected by the user. 
+To use this project, follow these steps:
 
-Please use HTML, JS and native JavaScript (also known as "Vanilla JS", use of jQuery is permissable) for the implementation of the core functionality described below. 
+1. Clone the repository to your local machine.
+2. Open the `index.html` file in a web browser.
 
-Please do not use a JavaScript framework (React, Angular, etc). 
+Alternatively, you can run the project on a live server:
 
-To create the "bubble" chart you may use any suitable library; D3.js will, for example, plot a chart similar to the following image:
+1. Install a live server extension or tool in your preferred code editor (e.g., Live Server for Visual Studio Code).
+2. Open the project directory in your code editor.
+3. Launch the live server from your code editor, which will automatically open the `index.html` file in your default web browser.
 
-![bubble chart](bubble.jpg?raw=true)
+### Features
 
-This exercise is to focus on your JavaScript code and not the appearance of the page.
+1. **Select Plot Option**: Users can choose from a variety of plot options, including population size, number of borders, number of timezones, number of languages, number of countries in a region, and number of unique timezones in a region.
 
-Please clone (don't fork) this repository, complete the exercises below and then upload to a public repository on GitHub and send us the link.
+2. **Interactive Visualization**: Upon selecting a plot option and clicking the "Plot" button, the tool generates an interactive visualization using D3.js. The visualization presents data in a bar chart format, with country/region names on the x-axis and corresponding values on the y-axis. Additionally, the size of bubbles within the chart represents the magnitude of the selected data.
 
-Please don't spend more than 2 hours on this task. If you reach 2 hours, please commit your code as-is to your repository.
+3. **Extended Information**: Users can hover over data points in the visualization to view a pop-up window containing additional information about the selected country or region. This information includes the country/region name, population, list of borders, and list of timezones.
 
-## Souce data
+4. **Data Table**: Alongside the visualization, a data table is dynamically generated to display the selected data in tabular format. This table provides a comprehensive overview of the plotted data.
 
-The source data for this exercise can be found within this repository at: [data/countries.json](data/countries.json)
+### Folder Structure
 
-On your form please allow the user to select from the following plot options:
+- **data**: Contains the `countries.json` file, which stores country data used for visualization and information display.
+- **scripts**: Includes the JavaScript files (`script.js`) responsible for handling user interactions, data processing, and visualization.
+- **styles**: Contains the CSS file (`styles.css`) for styling the web page.
 
-By country:
-- Population size
-- Number of borders
-- Number of timezones
-- Number of languages
+### Technologies Used
 
-By region:
-- Number of countries in the region
-- Number of unique timezones in the region
+- **HTML**: Markup language for structuring the web page.
+- **CSS**: Stylesheet language for designing the user interface.
+- **JavaScript**: Programming language for implementing interactivity and data manipulation.
+- **D3.js**: JavaScript library for creating dynamic and interactive data visualizations in the web browser.
 
-They should only be allowed to pick one plot point at a time, but also be allowed to change their selection and update the chart.
+### Credits
 
-## Exercises
+- **Data Source**: The country data used in this project is sourced from `countries.json`.
+- **D3.js**: The visualization library used for creating interactive charts.
 
-### Exercise 1 - Form and chart
+### Visualization
 
-Please create a basic form for the user to make and update their selection, as described above. 
+<img width="1120" alt="image" src="https://github.com/Noman1555/DCR-javascript-test/assets/164897336/ade27a5f-58f0-4330-acee-d6a76e04d3c4">
 
-Style as you feel appropriate, you may use any library to assist.
-
-Plot the selected criteria on a "bubble" chart.
- 
-### Exercise 2 - Display as a table
-
-Underneath the chart display the same data as shown in the chart in a table.
-
-### Exercise 3 - Extended information
-
-When hovering over a bubble display a pop-up with more information about that country/region from the JSON data.
