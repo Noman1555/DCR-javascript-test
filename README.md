@@ -1,4 +1,4 @@
-**Country Data Visualization**
+# Country Data Visualization**
 
 This project provides a web-based visualization tool for exploring various aspects of country data. Users can select different plot options from a dropdown menu and view corresponding visualizations and additional information about countries.
 
